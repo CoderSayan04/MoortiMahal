@@ -27,7 +27,7 @@ mongoose
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-    origin: process.env.CLIENT_BASE_URL ,
+    origin: 'https://murtimahal-1.onrender.com' ,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization","Cache-Control","Expires","Pragma"],
     credentials: true
