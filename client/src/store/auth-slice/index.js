@@ -12,7 +12,7 @@ export const registerUser = createAsyncThunk(
   "/auth/register",
   async (formData) => {
     const response = await axios.post(
-      "https://murtimahal.onrender.com/api/auth/register",
+      `${import.meta.env.VITE_API_URL}/api/auth/register`,
       formData,
       {
         withCredentials: true,
@@ -27,7 +27,7 @@ export const loginUser = createAsyncThunk(
   "/auth/login",
   async (formData) => {
     const response = await axios.post(
-      "https://murtimahal.onrender.com/api/auth/login",
+       `${import.meta.env.VITE_API_URL}/api/auth/login`,
       formData,
       {
         withCredentials: true,
@@ -42,7 +42,7 @@ export const logoutUser = createAsyncThunk(
   "/auth/logout",
   async () => {
     const response = await axios.post(
-      "http://localhost:5000/api/auth/logout",
+       `${import.meta.env.VITE_API_URL}/api/auth/logout`,
       {},
       {
         withCredentials: true,
@@ -57,7 +57,7 @@ export const checkAuth = createAsyncThunk(
   "/auth/checkauth",
   async (token) => {
     const response = await axios.get(
-      "https://murtimahal.onrender.com/api/auth/check-auth",
+      `${import.meta.env.VITE_API_URL}/api/auth/checkauth`,
       {
         withCredentials: true,
         headers: {
