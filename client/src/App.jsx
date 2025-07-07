@@ -25,13 +25,13 @@ import SearchProducts from "./pages/shopping-view/search";
 import React from "react";
 
  function App() {
-  const { user, isAuthenticated, isLoading } = useSelector(
-    (state) => state.auth
-  );
+  // const { user, isAuthenticated, isLoading } = useSelector(
+  //   (state) => state.auth
+  // );
 
-  // const user={name: "John Doe", role: "admin",};
-  // const isAuthenticated = true;
-  // const isLoading = false;
+  const user={name: "John Doe", role: "admin",};
+  const isAuthenticated = true;
+  const isLoading = false;
   const dispatch = useDispatch();
 
   useEffect(() => {
