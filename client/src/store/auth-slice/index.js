@@ -57,7 +57,7 @@ export const checkAuth = createAsyncThunk(
   "/auth/checkauth",
   async (token) => {
     const response = await axios.get(
-      "http://localhost:5000/api/auth/check-auth",
+      "https://murtimahal-1.onrender.com/api/auth/check-auth",
       {
         withCredentials: true,
         headers: {
