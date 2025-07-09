@@ -30,9 +30,7 @@ import React from "react";
     (state) => state.auth
   );
 
-  // const user={name: "John Doe", role: "admin",};
-  // const isAuthenticated = true;
-  // const isLoading = false;
+
   const dispatch = useDispatch();
 
   useEffect(() => {
