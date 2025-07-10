@@ -15,14 +15,6 @@ function AuthLayout() {
   const [isTyping, setIsTyping] = useState(true);
   const [gradientIndex, setGradientIndex] = useState(0);
 
-  const gradients = [
-    "from-purple-900 via-blue-900 to-indigo-900",
-    "from-indigo-900 via-purple-900 to-pink-900", 
-    "from-blue-900 via-indigo-900 to-purple-900",
-    "from-purple-900 via-pink-900 to-red-900",
-    "from-indigo-900 via-blue-900 to-cyan-900"
-  ];
-
   const titleGradients = [
     "from-yellow-400 via-orange-500 to-red-500",
     "from-pink-400 via-purple-500 to-indigo-500",
@@ -39,14 +31,14 @@ function AuthLayout() {
     "from-blue-400 via-purple-400 to-cyan-400"
   ];
 
-  // Gradient animation effect
+  // Gradient color changing effect
   useEffect(() => {
     const gradientTimer = setInterval(() => {
-      setGradientIndex((prevIndex) => (prevIndex + 1) % gradients.length);
+      setGradientIndex((prevIndex) => (prevIndex + 1) % titleGradients.length);
     }, 4000); // Change gradient every 4 seconds
 
     return () => clearInterval(gradientTimer);
-  }, [gradients.length]);
+  }, [titleGradients.length]);
 
   useEffect(() => {
     const currentText = texts[currentTextIndex];
@@ -78,20 +70,15 @@ function AuthLayout() {
 
   return (
     <div className="flex min-h-screen w-full">
-      <div className={`hidden lg:flex items-center justify-center bg-gradient-to-br ${gradients[gradientIndex]} w-1/2 px-12 relative overflow-hidden transition-all duration-1000 ease-in-out`}>
-        {/* Animated background overlays */}
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-pink-600/20 to-red-600/20 animate-pulse"></div>
-        <div className="absolute inset-0 bg-gradient-to-tl from-cyan-600/10 via-purple-600/10 to-blue-600/10 animate-bounce" style={{animationDuration: '4s'}}></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse" style={{animationDuration: '6s'}}></div>
-        
-        <div className="max-w-md space-y-6 text-center relative z-10">
-          <h1 className={`text-4xl font-extrabold tracking-tight bg-gradient-to-r ${titleGradients[gradientIndex]} bg-clip-text text-transparent animate-pulse transition-all duration-1000`}>
+      <div className="hidden lg:flex items-center justify-center bg-black w-1/2 px-12">
+        <div className="max-w-md space-y-6 text-center">
+          <h1 className={`text-6xl font-black tracking-tight bg-gradient-to-r ${titleGradients[gradientIndex]} bg-clip-text text-transparent transition-all duration-1000`}>
             Welcome to MoortiMahal
           </h1>
-          <div className="h-16 flex items-center justify-center">
-            <p className={`text-xl font-medium bg-gradient-to-r ${textGradients[gradientIndex]} bg-clip-text text-transparent transition-all duration-1000`}>
+          <div className="h-20 flex items-center justify-center">
+            <p className={`text-2xl font-bold bg-gradient-to-r ${textGradients[gradientIndex]} bg-clip-text text-transparent transition-all duration-1000`}>
               {displayedText}
-              <span className="animate-pulse text-yellow-400 drop-shadow-lg">|</span>
+              <span className="animate-pulse text-yellow-400">|</span>
             </p>
           </div>
         </div>
