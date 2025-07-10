@@ -72,7 +72,7 @@ function AuthLayout() {
     <div className="flex min-h-screen w-full">
       <div className="hidden lg:flex items-center justify-center bg-black w-1/2 px-12">
         <div className="max-w-md space-y-6 text-center">
-          <h1 className={`text-6xl font-black tracking-tight bg-gradient-to-r ${titleGradients[gradientIndex]} bg-clip-text text-transparent transition-all duration-1000`}>
+          <h1 className={`text-6xl font-black tracking-tight bg-white bg-clip-text text-transparent transition-all duration-1000`}>
             Welcome to MoortiMahal
           </h1>
           <div className="h-20 flex items-center justify-center">
