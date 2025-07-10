@@ -15,13 +15,7 @@ function AuthLayout() {
   const [isTyping, setIsTyping] = useState(true);
   const [gradientIndex, setGradientIndex] = useState(0);
 
-  const titleGradients = [
-    "from-yellow-400 via-orange-500 to-red-500",
-    "from-pink-400 via-purple-500 to-indigo-500",
-    "from-cyan-400 via-blue-500 to-purple-500",
-    "from-orange-400 via-pink-500 to-purple-500",
-    "from-green-400 via-cyan-500 to-blue-500"
-  ];
+
 
   const textGradients = [
     "from-cyan-400 via-purple-400 to-pink-400",
