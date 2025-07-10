@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 
 function AuthLayout() {
   const texts = [
@@ -96,12 +97,7 @@ function AuthLayout() {
         </div>
       </div>
       <div className="flex flex-1 items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">
-        {/* This is where your Outlet component would go */}
-        <div className="text-center">
-          <div className="text-gray-600 text-lg">
-            Your auth forms will appear here
-          </div>
-        </div>
+        <Outlet />
       </div>
     </div>
   );
