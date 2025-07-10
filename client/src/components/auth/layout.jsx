@@ -4,8 +4,10 @@ import { Outlet } from "react-router-dom";
 function AuthLayout() {
   const texts = [
     "Divinity Delivered Personally",
-    "Sacred Idols at Your Doorstep",
-    "Where Faith Meets Commerce",
+    // "Sacred Idols at Your Doorstep",
+    "Where Tradition Meets Technology",
+    "Crafting Spiritual Connections",
+
     "Your Spiritual Shopping Destination",
     "Bringing Temples to Your Home"
   ];
