@@ -28,13 +28,7 @@ function AuthLayout() {
   ];
 
   // Gradient color changing effect
-  useEffect(() => {
-    const gradientTimer = setInterval(() => {
-      setGradientIndex((prevIndex) => (prevIndex + 1) % titleGradients.length);
-    }, 4000); // Change gradient every 4 seconds
 
-    return () => clearInterval(gradientTimer);
-  }, [titleGradients.length]);
 
   useEffect(() => {
     const currentText = texts[currentTextIndex];
@@ -48,7 +42,7 @@ function AuthLayout() {
       } else {
         const timer = setTimeout(() => {
           setIsTyping(false);
-        }, 3000); // Show complete text for 3 seconds
+        }, 2000); // Show complete text for 3 seconds
         return () => clearTimeout(timer);
       }
     } else {
