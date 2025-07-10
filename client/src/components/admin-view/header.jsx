@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "@/store/auth-slice";
 import { useNavigate } from "react-router-dom";
+import { resetTokenAndCredentials } from "@/store/auth-slice";
 import React from "react";
 function AdminHeader({ setOpen }) {
   const dispatch = useDispatch();
