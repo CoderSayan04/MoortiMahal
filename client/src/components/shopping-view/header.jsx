@@ -1,4 +1,5 @@
 
+
 // import React from "react";
 // import { HousePlug, LogOut, Menu, ShoppingCart, UserCog } from "lucide-react";
 // import {
@@ -52,11 +53,11 @@
 //   }
 
 //   return (
-//     <nav className="flex flex-col mb-4 lg:mb-0 lg:items-center gap-4 lg:gap-6 lg:flex-row">
+//     <nav className="flex flex-col mb-6 lg:mb-0 lg:items-center gap-6 lg:gap-6 lg:flex-row">
 //       {shoppingViewHeaderMenuItems.map((menuItem) => (
 //         <Label
 //           onClick={() => handleNavigate(menuItem)}
-//           className="text-sm font-medium cursor-pointer hover:text-primary transition-colors py-2 lg:py-0"
+//           className="text-sm font-medium cursor-pointer hover:text-primary transition-colors py-3 lg:py-0 px-2 lg:px-0 rounded-md hover:bg-accent lg:hover:bg-transparent"
 //           key={menuItem.id}
 //         >
 //           {menuItem.label}
@@ -86,17 +87,17 @@
 //   }, [dispatch, user?.id]);
 
 //   return (
-//     <div className={`flex gap-3 ${isMobile ? 'flex-col mt-4 pt-4 border-t' : 'lg:items-center lg:flex-row'}`}>
+//     <div className={`flex gap-4 ${isMobile ? 'flex-col mt-6 pt-6 border-t space-y-3' : 'lg:items-center lg:flex-row'}`}>
 //       <Sheet open={openCartSheet} onOpenChange={setOpenCartSheet}>
 //         <SheetTrigger asChild>
 //           <Button
 //             variant="outline"
 //             size={isMobile ? "default" : "icon"}
-//             className={`relative ${isMobile ? 'justify-start' : ''}`}
+//             className={`relative ${isMobile ? 'justify-start w-full' : ''}`}
 //           >
 //             <ShoppingCart className="w-4 h-4 mr-2" />
 //             {isMobile && <span className="mr-2">Cart</span>}
-//             <span className={`absolute ${isMobile ? 'top-[-8px] right-2' : 'top-[-8px] right-[2px]'} font-bold text-xs bg-primary text-primary-foreground rounded-full w-5 h-5 flex items-center justify-center`}>
+//             <span className={`absolute ${isMobile ? 'top-[-8px] right-3' : 'top-[-5px] right-[2px]'} font-bold text-xs bg-primary text-primary-foreground rounded-full min-w-5 h-5 flex items-center justify-center px-1`}>
 //               {cartItems?.items?.length || 0}
 //             </span>
 //             <span className="sr-only">User cart</span>
@@ -116,7 +117,7 @@
 //         <DropdownMenuTrigger asChild>
 //           <Button 
 //             variant={isMobile ? "outline" : "ghost"} 
-//             className={`${isMobile ? 'justify-start' : 'p-0'}`}
+//             className={`${isMobile ? 'justify-start w-full' : 'p-0'}`}
 //           >
 //             <Avatar className="bg-black w-8 h-8 mr-2">
 //               <AvatarFallback className="bg-black text-white font-extrabold text-sm">
@@ -175,15 +176,15 @@
 //             </Button>
 //           </SheetTrigger>
 //           <SheetContent side="left" className="w-full max-w-xs">
-//             <div className="flex flex-col h-full">
+//             <div className="flex flex-col h-full px-4 py-6">
 //               {/* Mobile Menu Items */}
-//               <div className="py-4">
+//               <div className="flex-1 mb-8">
 //                 <MenuItems />
 //               </div>
               
 //               {/* Mobile User Content */}
 //               {isAuthenticated && (
-//                 <div className="mt-auto">
+//                 <div className="mt-auto pt-6 border-t">
 //                   <HeaderRightContent isMobile={true} />
 //                 </div>
 //               )}
@@ -283,18 +284,83 @@ function HeaderRightContent({ isMobile = false }) {
     }
   }, [dispatch, user?.id]);
 
+  if (isMobile) {
+    return (
+      <div className="flex flex-col space-y-3">
+        {/* Cart Button */}
+        <Sheet open={openCartSheet} onOpenChange={setOpenCartSheet}>
+          <SheetTrigger asChild>
+            <Button
+              variant="outline"
+              size="default"
+              className="relative justify-start w-full"
+            >
+              <ShoppingCart className="w-4 h-4 mr-2" />
+              <span className="mr-2">Cart</span>
+              <span className="absolute top-[-8px] right-3 font-bold text-xs bg-primary text-primary-foreground rounded-full min-w-5 h-5 flex items-center justify-center px-1">
+                {cartItems?.items?.length || 0}
+              </span>
+              <span className="sr-only">User cart</span>
+            </Button>
+          </SheetTrigger>
+          <UserCartWrapper
+            setOpenCartSheet={setOpenCartSheet}
+            cartItems={
+              cartItems && cartItems.items && cartItems.items.length > 0
+                ? cartItems.items
+                : []
+            }
+          />
+        </Sheet>
+
+        {/* Account Section */}
+        <div className="space-y-2">
+          <Button 
+            variant="outline"
+            className="justify-start w-full"
+            onClick={() => navigate("/shop/account")}
+          >
+            <UserCog className="w-4 h-4 mr-2" />
+            <span>Account</span>
+          </Button>
+          
+          <Button 
+            variant="outline"
+            className="justify-start w-full"
+            onClick={handleLogout}
+          >
+            <LogOut className="w-4 h-4 mr-2" />
+            <span>Logout</span>
+          </Button>
+        </div>
+
+        {/* User Info */}
+        <div className="flex items-center gap-2 pt-2 border-t">
+          <Avatar className="bg-black w-8 h-8">
+            <AvatarFallback className="bg-black text-white font-extrabold text-sm">
+              {user?.userName?.[0]?.toUpperCase() || 'U'}
+            </AvatarFallback>
+          </Avatar>
+          <span className="text-sm text-muted-foreground">
+            Logged in as {user?.userName}
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  // Desktop version remains the same
   return (
-    <div className={`flex gap-4 ${isMobile ? 'flex-col mt-6 pt-6 border-t space-y-3' : 'lg:items-center lg:flex-row'}`}>
+    <div className="flex gap-4 lg:items-center lg:flex-row">
       <Sheet open={openCartSheet} onOpenChange={setOpenCartSheet}>
         <SheetTrigger asChild>
           <Button
             variant="outline"
-            size={isMobile ? "default" : "icon"}
-            className={`relative ${isMobile ? 'justify-start w-full' : ''}`}
+            size="icon"
+            className="relative"
           >
             <ShoppingCart className="w-4 h-4 mr-2" />
-            {isMobile && <span className="mr-2">Cart</span>}
-            <span className={`absolute ${isMobile ? 'top-[-8px] right-3' : 'top-[-5px] right-[2px]'} font-bold text-xs bg-primary text-primary-foreground rounded-full min-w-5 h-5 flex items-center justify-center px-1`}>
+            <span className="absolute top-[-5px] right-[2px] font-bold text-xs bg-primary text-primary-foreground rounded-full min-w-5 h-5 flex items-center justify-center px-1">
               {cartItems?.items?.length || 0}
             </span>
             <span className="sr-only">User cart</span>
@@ -313,15 +379,14 @@ function HeaderRightContent({ isMobile = false }) {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button 
-            variant={isMobile ? "outline" : "ghost"} 
-            className={`${isMobile ? 'justify-start w-full' : 'p-0'}`}
+            variant="ghost" 
+            className="p-0"
           >
             <Avatar className="bg-black w-8 h-8 mr-2">
               <AvatarFallback className="bg-black text-white font-extrabold text-sm">
                 {user?.userName?.[0]?.toUpperCase() || 'U'}
               </AvatarFallback>
             </Avatar>
-            {isMobile && <span>{user?.userName}</span>}
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent side="right" className="w-56">
@@ -373,15 +438,15 @@ function ShoppingHeader() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-full max-w-xs">
-            <div className="flex flex-col h-full px-4 py-6">
+            <div className="flex flex-col px-4 py-6">
               {/* Mobile Menu Items */}
-              <div className="flex-1 mb-8">
+              <div className="mb-6">
                 <MenuItems />
               </div>
               
-              {/* Mobile User Content */}
+              {/* Mobile User Content - Right after menu items */}
               {isAuthenticated && (
-                <div className="mt-auto pt-6 border-t">
+                <div className="pt-4 border-t">
                   <HeaderRightContent isMobile={true} />
                 </div>
               )}
