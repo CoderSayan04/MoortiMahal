@@ -96,7 +96,7 @@ function HeaderRightContent({ isMobile = false }) {
           >
             <ShoppingCart className="w-4 h-4 mr-2" />
             {isMobile && <span className="mr-2">Cart</span>}
-            <span className={`absolute ${isMobile ? 'top-[-8px] right-2' : 'top-[-2px] right-[2px]'} font-bold text-xs bg-primary text-primary-foreground rounded-full w-5 h-5 flex items-center justify-center`}>
+            <span className={`absolute ${isMobile ? 'top-[-8px] right-2' : 'top-[-8px] right-[2px]'} font-bold text-xs bg-primary text-primary-foreground rounded-full w-5 h-5 flex items-center justify-center`}>
               {cartItems?.items?.length || 0}
             </span>
             <span className="sr-only">User cart</span>
