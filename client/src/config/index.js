@@ -509,11 +509,11 @@ export const addproductFormControls = [
     name: "category",
     componentType: "select",
     options: [
-      { id: "men", label: "Men" },
-      { id: "women", label: "Women" },
-      { id: "kids", label: "Kids" },
-      { id: "accessories", label: "Accessories" },
-      { id: "footwear", label: "Footwear" },
+      { id: "durgapuja", label: "Durgapuja" },
+      { id: "chaturthi", label: "Chaturthi" },
+      { id: "diwali", label: "Diwali" },
+      { id: "navaratri", label: "Navaratri" },
+      { id: "samagrees", label: "Samagrees" },
     ],
   },
   {
@@ -563,28 +563,28 @@ export const shoppingViewHeaderMenuItems = [
     path: "/shop/listing",
   },
   {
-    id: "men",
-    label: "Men",
+    id: "durgapuja",
+    label: "Durgapuja",
     path: "/shop/listing",
   },
   {
-    id: "women",
-    label: "Women",
+    id: "chaturthi",
+    label: "Chaturthi",
     path: "/shop/listing",
   },
   {
-    id: "kids",
-    label: "Kids",
+    id: "diwali",
+    label: "Diwali",
     path: "/shop/listing",
   },
   {
-    id: "footwear",
-    label: "Footwear",
+    id: "navaratri",
+    label: "Navaratri",
     path: "/shop/listing",
   },
   {
-    id: "accessories",
-    label: "Accessories",
+    id: "samagrees",
+    label: "Samagrees",
     path: "/shop/listing",
   },
   {
@@ -595,11 +595,11 @@ export const shoppingViewHeaderMenuItems = [
 ];
 
 export const categoryOptionsMap = {
-  men: "Men",
-  women: "Women",
-  kids: "Kids",
-  accessories: "Accessories",
-  footwear: "Footwear",
+  durgapuja: "Durgapuja",
+  chaturthi: "Chaturthi",
+  diwali: "Diwali"  ,
+  navaratri: "Navaratri",
+  samagrees: "Samagrees",
 };
 
 export const brandOptionsMap = {
@@ -612,11 +612,11 @@ export const brandOptionsMap = {
 
 export const filterOptions = {
   category: [
-    { id: "men", label: "Men" },
-    { id: "women", label: "Women" },
-    { id: "kids", label: "Kids" },
-    { id: "accessories", label: "Accessories" },
-    { id: "footwear", label: "Footwear" },
+      { id: "durgapuja", label: "Durgapuja" },
+      { id: "chaturthi", label: "Chaturthi" },
+      { id: "diwali", label: "Diwali" },
+      { id: "navaratri", label: "Navaratri" },
+      { id: "samagrees", label: "Samagrees" },
   ],
   brand: [
     { id: "local-artisans", label: "Local Artisans" },
