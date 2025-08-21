@@ -510,7 +510,7 @@ export const addproductFormControls = [
     componentType: "select",
     options: [
       { id: "durgapuja", label: "Durgapuja" },
-      { id: "chaturthi", label: "Chaturthi" },
+      { id: "festival", label: "Festival" },
       { id: "diwali", label: "Diwali" },
       { id: "navaratri", label: "Navaratri" },
       { id: "samagrees", label: "Samagrees" },
@@ -568,8 +568,8 @@ export const shoppingViewHeaderMenuItems = [
     path: "/shop/listing",
   },
   {
-    id: "chaturthi",
-    label: "Chaturthi",
+    id: "festival",
+    label: "Festival",
     path: "/shop/listing",
   },
   {
@@ -596,7 +596,7 @@ export const shoppingViewHeaderMenuItems = [
 
 export const categoryOptionsMap = {
   durgapuja: "Durgapuja",
-  chaturthi: "Chaturthi",
+  festival: "Festival",
   diwali: "Diwali"  ,
   navaratri: "Navaratri",
   samagrees: "Samagrees",
@@ -613,7 +613,7 @@ export const brandOptionsMap = {
 export const filterOptions = {
   category: [
       { id: "durgapuja", label: "Durgapuja" },
-      { id: "chaturthi", label: "Chaturthi" },
+      { id: "festival", label: "Festival" },
       { id: "diwali", label: "Diwali" },
       { id: "navaratri", label: "Navaratri" },
       { id: "samagrees", label: "Samagrees" },
