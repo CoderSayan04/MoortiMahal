@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
+   ChevronLeft,
+  ChevronRight,
   Church,
   Crown,
   Flame,
