@@ -1,19 +1,16 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 import {
-  Airplay,
-  BabyIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  CloudLightning,
-  Heater,
-  Images,
-  Shirt,
-  ShirtIcon,
-  ShoppingBasket,
-  UmbrellaIcon,
-  WashingMachine,
-  WatchIcon,
+  Church,
+  Crown,
+  Flame,
+  Gift,
+  Hammer,
+  Music,
+  PackageOpen,
+  Palette,
+  Sparkles,
+  Star,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
