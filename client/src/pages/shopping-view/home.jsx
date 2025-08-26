@@ -29,21 +29,37 @@ import ProductDetailsDialog from "@/components/shopping-view/product-details";
 import { getFeatureImages } from "@/store/common-slice";
 import { toast } from "sonner";
 
+// const categoriesWithIcon = [
+//   { id: "men", label: "Men", icon: ShirtIcon },
+//   { id: "women", label: "Women", icon: CloudLightning },
+//   { id: "kids", label: "Kids", icon: BabyIcon },
+//   { id: "accessories", label: "Accessories", icon: WatchIcon },
+//   { id: "footwear", label: "Footwear", icon: UmbrellaIcon },
+// ];
+
+// const brandsWithIcon = [
+//   { id: "nike", label: "Nike", icon: Shirt },
+//   { id: "adidas", label: "Adidas", icon: WashingMachine },
+//   { id: "puma", label: "Puma", icon: ShoppingBasket },
+//   { id: "levi", label: "Levi's", icon: Airplay },
+//   { id: "zara", label: "Zara", icon: Images },
+//   { id: "h&m", label: "H&M", icon: Heater },
+// ];
+
 const categoriesWithIcon = [
-  { id: "men", label: "Men", icon: ShirtIcon },
-  { id: "women", label: "Women", icon: CloudLightning },
-  { id: "kids", label: "Kids", icon: BabyIcon },
-  { id: "accessories", label: "Accessories", icon: WatchIcon },
-  { id: "footwear", label: "Footwear", icon: UmbrellaIcon },
+  { id: "durgapuja", label: "Durgapuja", icon: Crown },
+  { id: "festival", label: "Festival", icon: Sparkles },
+  { id: "diwali", label: "Diwali", icon: Flame },
+  { id: "navaratri", label: "Navaratri", icon: Music },
+  { id: "samagrees", label: "Samagrees", icon: Gift },
 ];
 
 const brandsWithIcon = [
-  { id: "nike", label: "Nike", icon: Shirt },
-  { id: "adidas", label: "Adidas", icon: WashingMachine },
-  { id: "puma", label: "Puma", icon: ShoppingBasket },
-  { id: "levi", label: "Levi's", icon: Airplay },
-  { id: "zara", label: "Zara", icon: Images },
-  { id: "h&m", label: "H&M", icon: Heater },
+  { id: "local-artisans", label: "Local Artisans", icon: Hammer },
+  { id: "premium-handcrafted", label: "Premium Handcrafted", icon: Star },
+  { id: "temple-collection", label: "Temple Collection", icon: Church },
+  { id: "modern-designs", label: "Modern Designs", icon: Palette },
+  { id: "gifting-decor", label: "Gifting & Decor", icon: PackageOpen },
 ];
 
 function ShoppingHome() {
