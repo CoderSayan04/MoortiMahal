@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
   Church,
   Crown,
   Flame,
@@ -26,23 +28,6 @@ import ProductDetailsDialog from "@/components/shopping-view/product-details";
 import { getFeatureImages } from "@/store/common-slice";
 import { toast } from "sonner";
 
-// const categoriesWithIcon = [
-//   { id: "men", label: "Men", icon: ShirtIcon },
-//   { id: "women", label: "Women", icon: CloudLightning },
-//   { id: "kids", label: "Kids", icon: BabyIcon },
-//   { id: "accessories", label: "Accessories", icon: WatchIcon },
-//   { id: "footwear", label: "Footwear", icon: UmbrellaIcon },
-// ];
-
-// const brandsWithIcon = [
-//   { id: "nike", label: "Nike", icon: Shirt },
-//   { id: "adidas", label: "Adidas", icon: WashingMachine },
-//   { id: "puma", label: "Puma", icon: ShoppingBasket },
-//   { id: "levi", label: "Levi's", icon: Airplay },
-//   { id: "zara", label: "Zara", icon: Images },
-//   { id: "h&m", label: "H&M", icon: Heater },
-// ];
-
 const categoriesWithIcon = [
   { id: "durgapuja", label: "Durgapuja", icon: Crown },
   { id: "festival", label: "Festival", icon: Sparkles },
@@ -64,7 +49,7 @@ function ShoppingHome() {
   const { productList, productDetails } = useSelector(
     (state) => state.shopProducts
   );
-const { featureImageList = [] } = useSelector((state) => state.commonFeature || {});
+  const { featureImageList = [] } = useSelector((state) => state.commonFeature || {});
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -198,10 +183,10 @@ const { featureImageList = [] } = useSelector((state) => state.commonFeature || 
       </section>
 
       {/* Brands Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Shop by Brand</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {brandsWithIcon.map((brandItem) => (
               <Card
                 key={brandItem.id}
