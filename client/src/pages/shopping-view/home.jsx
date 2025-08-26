@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 import {
-   ChevronLeft,
-  ChevronRight,
+   ChevronLeftIcon,
+   ChevronRightIcon,
   Church,
   Crown,
   Flame,
@@ -232,3 +232,4 @@ function ShoppingHome() {
 }
 
 export default ShoppingHome;
+
